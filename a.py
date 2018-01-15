@@ -6,18 +6,14 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 cl = LINETCR.LINE()
-cl.login(token="EolbxTGc4uKOXSW7glw9.S9S8YkxBnTPrHUTs0uV6Qq.eCeqel1ji4FTMaCKHjcXG98w6XwapZYNKbL0sSqgylw=")
+cl.login(token="")
 cl.loginResult()
 
 ki = LINETCR.LINE()
-ki.login(token="Eo9yEsZ9r2HK42fwwD60.9vtjE887Sod39Kibjxxfia.1cYaNqqyd0A0Db07gUUxLy3oVdBnSWTNaMhCgloBhk0=")
+ki.login(token="")
 ki.loginResult()
 
-#ki2 = LINETCR.LINE()
-#ki2.login(qr=True)
-#ki2.loginResult()
-
-print "login success plak"
+print "login By ─═हई..तุএച้ට௮..ईह═─ "
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -316,30 +312,7 @@ def bot(op):
                   random.choice(KAC).updateGroup(G)
                   wait["blacklist"][op.param2] = True
                   
-            #if op.param3 in ki2mid:
-              #if op.param2 not in Bots:
-                #try:
-                  #G = ki.getGroup(op.param1)
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
-                  #G.preventJoinByTicket = False
-                  #ki.updateGroup(G)
-                  #Ticket = ki.reissueGroupTicket(op.param1)
-                  #ki2.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  #time.sleep(0.01)
-                  #G.preventJoinByTicket = True
-                  #ki.updateGroup(G)
-                  #wait["blacklist"][op.param2] = True
-                #except:
-                  #G = random.choice(KAC).getGroup(op.param1) #Sanji Bertindak
-                  #random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  #G.preventJoinByTicket = False
-                  #random.choice(KAC).updateGroup(G)
-                  #Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
-                  #ki2.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  #time.sleep(0.01)
-                  #G.preventJoinByTicket = True
-                  #random.choice(KAC).updateGroup(G)
-                  #wait["blacklist"][op.param2] = True
+
                   #--------------------------------                      
         if op.type == 22:
             if wait["leaveRoom"] == True:
