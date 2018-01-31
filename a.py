@@ -218,9 +218,11 @@ def bot(op):
                 #try:
                   #ki.kickoutFromGroup(op.param1,[op.param2])
                   #ki.sendText(op.param1, "Protect Join nya On Boss\nMatiin dulu kalo mau Ada yang Gabung\nJoinn on/off")
+		  #cl.updateGroup(X)
                 #except:
                   #ki.kickoutFromGroup(op.param1,[op.param2])
                   #ki.sendText(op.param1, "Protect Join nya On Boss\nMatiin dulu kalo mau Ada yang Gabung\nJoinn on/off")
+		  #cl.updateGroup(X)
         #------Joined User Kick start------#
         #if op.type == 32: #Yang Cancel Invitan langsung ke kick
           #if wait["Protectcancel"] == True:
