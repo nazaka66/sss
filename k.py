@@ -7,17 +7,17 @@ import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 #danai
 cl = LINETCR.LINE()
-cl.login(token="EpdJ1ySJ5JZZlrGtyIj9.S9S8YkxBnTPrHUTs0uV6Qq.b7DdBHXunO4EHp7a6vcwz3P1wdyCA2o/H9HJR2OBBuc=")
+cl.login(token="")
 cl.loginResult()
 
 #binla
-#ki = LINETCR.LINE()
-#ki.login(token="EpFU72Vel1b32G3K6yJ0.9vtjE887Sod39Kibjxxfia.YNufqZShfTddGQpGA1ChGsBQR+TGFT6yVbShlye9aEQ=")
-#ki.loginResult()
+ki = LINETCR.LINE()
+ki.login(token="")
+ki.loginResult()
 
 
-
-ki2 = ki = cl
+cl
+ki2 = ki
 
 print "login By DanaiBot"
 reload(sys)
@@ -63,7 +63,7 @@ kimid = ki.getProfile().mid
 ki2mid = ki2.getProfile().mid
 Bots=[mid,kimid,ki2mid]
 owner =["ub3db3cc8a5db36da5186eb52d14bfaa9"]
-admin = ["ub3db3cc8a5db36da5186eb52d14bfaa9","u47807762b71826d1826a60f3fcb9a01f","uc3f34b21479314698c13d8cb72feb28f"]
+admin = ["ub3db3cc8a5db36da5186eb52d14bfaa9"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -163,21 +163,21 @@ def bot(op):
               else:
               	try:
                 	cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "แน๊... มีแอบเปิดลิ้ง 😒😒😒")
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
+                        ki.kickoutFromGroup(op.param1,[op.param2])
                 	X = cl.getGroup(op.param1)
                 	X.preventJoinByTicket = True
-                  #ki.updateGroup(X)
+                        ki.updateGroup(X)
                 	#cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "Kami Masukin Kedalam Blacklis Boss")
                 	wait["blacklist"][op.param2] = True
                 	f=codecs.open('st2__b.json','w','utf-8')
                 	json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                 except:
                 	random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "\n"+ "แน๊...มีแอบเปิดลิ้ง 😭😭😭")
-                	#random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                	random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                 	X = random.choice(KAC).getGroup(op.param1)
                 	X.preventJoinByTicket = True
-                	#random.choice(KAC).updateGroup(X)
-                	#random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "\n" + "Kami Masukin Kedalam Blacklis Boss")
+                	random.choice(KAC).updateGroup(X)
+                	random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "\n" + "Kami Masukin Kedalam Blacklis Boss")
                 	wait["blacklist"][op.param2] = True
                 	f=codecs.open('st2__b.json','w','utf-8')
                 	json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
@@ -193,14 +193,14 @@ def bot(op):
                 pass
               else:
                 try:
-                  #ki.cancelGroupInvitation(op.param1, gMembMids)
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
+                  ki.cancelGroupInvitation(op.param1, gMembMids)
+                  ki.kickoutFromGroup(op.param1,[op.param2])
                   cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "แน๊...!!! แอบดึงคนมาอีกแระ......😒😒😒")
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
+                  ki.kickoutFromGroup(op.param1,[op.param2])
                 except:
-                  #ki.cancelGroupInvitation(op.param1, gMembMids)
-                  ki.sendText(op.param1,ki.getContact(op.param2).displayName + "\n" + "แอบดึงใครมาล่ะท่าน .......🙅🙅🙅")
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
+                  random.choice(KAC).cancelGroupInvitation(op.param1, gMembMids)
+                  random.choice(KAC).sendText(op.param1,ki.getContact(op.param2).displayName + "\n" + "แอบดึงใครมาล่ะท่าน .......🙅🙅🙅")
+                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
         #------Cancel Invite User Finish------#
             
         if op.type == 13:
@@ -231,35 +231,35 @@ def bot(op):
               else:
                 print "autoJoin is Off"
         #------Joined User Kick start------#
-        #if op.type == 17:
-          #if wait["Protectjoin"] == True:
-            #if op.param2 not in Bots:
-              #if op.param2 in Bots:
-                #pass
-              #elif op.param2 in admin:
-                #pass
-              #elif op.param2 in owner:
-                #pass
-              #else:
-                #try:
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
+        if op.type == 17:
+          if wait["Protectjoin"] == True:
+            if op.param2 not in Bots:
+              if op.param2 in Bots:
+                pass
+              elif op.param2 in admin:
+                pass
+              elif op.param2 in owner:
+                pass
+              else:
+                try:
+                  ki.kickoutFromGroup(op.param1,[op.param2])
                   #cl.sendText(op.param1, "Protect Join nya On Boss\nMatiin dulu kalo mau Ada yang Gabung\nJoinn on/off")
-                #except:
-                  #random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                except:
+                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                   #cl.sendText(op.param1, "Protect Join nya On Boss\nMatiin dulu kalo mau Ada yang Gabung\nJoinn on/off")
         #------Joined User Kick start------#
-        #if op.type == 32: #Yang Cancel Invitan langsung ke kick
-          #if wait["Protectcancel"] == True:
-            #if op.param2 not in Bots:
-              #if op.param2 in Bots:
-               # pass
-              #elif op.param2 in admin:
-                #pass
-              #elif op.param2 in owner:
-                #pass
-              #else:
+        if op.type == 32: #Yang Cancel Invitan langsung ke kick
+          if wait["Protectcancel"] == True:
+            if op.param2 not in Bots:
+              if op.param2 in Bots:
+                pass
+              elif op.param2 in admin:
+                pass
+              elif op.param2 in owner:
+                pass
+              else:
                 #random.choice(KAC).sendText(op.param1, "Jangan Sok Jadi Jagoan Deh Lu Njir.\nAdmin Bukan,Owner Juga Bukan\Kick Ah 😛")
-                #random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])   
+                random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])   
         
         if op.type == 19:
           if op.param2 not in Bots:
