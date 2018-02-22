@@ -7,20 +7,16 @@ import time,random,sys,json,codecs,threading,glob,re,os,subprocess
 
 #danai
 cl = LINETCR.LINE()
-cl.login(token="EqzJW8ZX1K9RTyG8DrO9.S9S8YkxBnTPrHUTs0uV6Qq.BCX+RoTBOnvDm8NWCTBXWI33mpxEoXgNDQ3EQFDSsrI=")
+cl.login(token="ใส่โทเคน")
 cl.loginResult()
 
-#แก้รัน
-#ki = LINETCR.LINE()
-#ki.login(token="EpAZ0nwYHSHl0zsDSABf.W+nliuEtfgMme9JlCV6YJW.8Vv2twX3C4H4fSRsfBlESjRPqCTZQEsNTvVtubzkCrY=")
-#ki.loginResult()
+
 
 
 
 ki2 = ki = cl
 
-#ki2 = cl
-#ki
+
 
 print "login By DanaiBot"
 reload(sys)
@@ -65,8 +61,8 @@ mid = cl.getProfile().mid
 kimid = ki.getProfile().mid
 ki2mid = ki2.getProfile().mid
 Bots=[mid,kimid,ki2mid]
-owner =["ub3db3cc8a5db36da5186eb52d14bfaa9"]
-admin = ["ub3db3cc8a5db36da5186eb52d14bfaa9","u47807762b71826d1826a60f3fcb9a01f","uc3f34b21479314698c13d8cb72feb28f"]
+owner =["ใส่ MID"]
+admin = ["ใส่ MID"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -181,17 +177,17 @@ def bot(op):
                 pass
               else:
               	try:
-                	#cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "แน๊... มีแอบเปิดลิ้ง 😒😒😒" + "\n\n\n"  + datetime.today().strftime('%H:%M:%S'))
-                  #ki.kickoutFromGroup(op.param1,[op.param2])
+                	cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "แน๊... มีแอบเปิดลิ้ง 😒😒😒" + "\n\n\n"  + datetime.today().strftime('%H:%M:%S'))
+                        #ki.kickoutFromGroup(op.param1,[op.param2])
                 	X = cl.getGroup(op.param1)
                 	X.preventJoinByTicket = True
-                  #ki.updateGroup(X)
+                        #ki.updateGroup(X)
                 	#cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "Kami Masukin Kedalam Blacklis Boss")
                 	wait["blacklist"][op.param2] = True
                 	f=codecs.open('st2__b.json','w','utf-8')
                 	json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                 except:
-                	#random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "\n"+ "แน๊...มีแอบเปิดลิ้ง 😭😭😭")
+                	random.choice(KAC).sendText(op.param1,random.choice(KAC).getContact(op.param2).displayName + "\n"+ "แน๊...มีแอบเปิดลิ้ง 😭😭😭")
                 	#random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                 	X = random.choice(KAC).getGroup(op.param1)
                 	X.preventJoinByTicket = True
@@ -203,7 +199,7 @@ def bot(op):
         #------Protect Group Kick finish-----#
 
         #------Cancel Invite User start------#
-        #if op.type == 13:
+        3if op.type == 13:
           #if wait["Protectcancl"] == True:
             #group = cl.getGroup(op.param1)
             #gMembMids = [contact.mid for contact in group.invitee]
@@ -1552,7 +1548,7 @@ def bot(op):
                       print error
     #-------------Fungsi Tag All Finish---------------#
             elif msg.text in ["tag all"]:
-              if msg.from_ in admin:
+              #if msg.from_ in admin:
                  group = cl.getGroup(msg.to)
                  group = cl.getGroup(msg.to)
                  k = len(group.members)//100
@@ -1699,7 +1695,7 @@ def bot(op):
                     except Exception as e:
                       print e
         #-----------------------------------------
-            elif "Nkop:on" in msg.text:
+            elif "Nkop:on" in msg.text:  #บินกลุ่ม
               if msg.from_ in owner:
                 if msg.toType == 2:
                     print "ok"
@@ -1885,7 +1881,7 @@ def bot(op):
                 cl.sendText(msg.to,h)
       #--------------List Group------------
        #------------ Keluar Dari Semua Group------
-            elif msg.text in ["binla:bye"]:
+            elif msg.text in ["binla:bye"]:  #ออกทุกกลุ่ม
                if msg.from_ in admin:
                 gid = cl.getGroupIdsJoined()
                 gid = ki.getGroupIdsJoined()
@@ -1901,12 +1897,11 @@ def bot(op):
 #------------------------End---------------------
 
  #-----------------End-----------
-            elif msg.text in ["Dc"]:
+            elif msg.text in ["Dc"]: #ลบแชท
               if msg.from_ in admin:
                 cl.removeAllMessages(op.param2)
                 cl.sendText(msg.to,"❇️ลบแระ เครื่องลื่นปรึ๊ดเลย....❇️" + "\n\n" + datetime.today().strftime('%H:%M:%S'))
-                ki.removeAllMessages(op.param2)
-                ki.sendText(msg.to,"❇️ลบแระ เครื่องลื่นปรึ๊ดเลย....❇️" + "\n\n" + datetime.today().strftime('%H:%M:%S'))
+                
 	          
 	#==========================================================×
             
@@ -1915,7 +1910,7 @@ def bot(op):
 #-----------------------------------------------             
             
 			#------------------------------------------------------------
-            elif "time" in msg.text:
+            elif "time" in msg.text: #เวลา
               if msg.from_ in admin:
                   cl.sendText(msg.to,"⏰ ขณะนี้เวลา ⏰" + "\n\n" + datetime.today().strftime('%H:%M:%S'))
 			#-------------------------------------------------------------------------
@@ -1977,13 +1972,13 @@ def bot(op):
                 cl.sendText(msg.to, "%sDetik" % (elapsed_time) + "\n\n" + "⏰" + datetime.today().strftime('%H:%M:%S') )
                 #ki.sendText(msg.to, "%sDetik" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
-            #elif msg.text in ["Gc","gcreator"]:
-              #if msg.from_ in admin:
-                #ginfo = cl.getGroup(msg.to)
-                #gCreator = ginfo.creator.mid
-                #msg.contentType = 13
-                #msg.contentMetadata = {'mid': gCreator}
-                #cl.sendMessage(msg)
+            elif msg.text in ["Gc","gcreator"]: #คนสร้างกลุ่ม
+              if msg.from_ in admin:
+                ginfo = cl.getGroup(msg.to)
+                gCreator = ginfo.creator.mid
+                msg.contentType = 13
+                msg.contentMetadata = {'mid': gCreator}
+                cl.sendMessage(msg)
                 
                  
             #-------------Fungsi Banned Send Contact Start------------------#
