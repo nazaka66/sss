@@ -18,7 +18,7 @@ ki2 = ki = cl
 
 
 
-print "login By DanaiBot"
+print "login By DanaiBot\n\n\n By :☆☆ ✈✈  Ľ¡Ŋ₤βΦŦ  ✈✈ ☆☆\n\nIdline: http://line.me/ti/p/~405_pom"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
