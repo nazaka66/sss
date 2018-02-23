@@ -157,13 +157,13 @@ def bot(op):
     try:
         if op.type == 0:
             return
-        #if op.type == 5:
-            #if wait["autoAdd"] == True:
-                #cl.findAndAddContactsByMid(op.param1)
-                #if (wait["message"] in [""," ","\n",None]):
-                    #pass
-                #else:
-                    #cl.sendText(op.param1,str(wait["message"]))
+        if op.type == 5:
+            if wait["autoAdd"] == True:
+                cl.findAndAddContactsByMid(op.param1)
+                if (wait["message"] in [""," ","\n",None]):
+                    pass
+                else:
+                    cl.sendText(op.param1,str(wait["message"]))
 
         #------Protect Group Kick start------#
         if op.type == 11:
@@ -199,22 +199,22 @@ def bot(op):
         #------Protect Group Kick finish-----#
 
         #------Cancel Invite User start------#
-        3if op.type == 13:
-          #if wait["Protectcancl"] == True:
-            #group = cl.getGroup(op.param1)
-            #gMembMids = [contact.mid for contact in group.invitee]
-            #if op.param2 not in Bots:
-              #if op.param2 in Bots:
-                #pass
-              #else:
-                #try:
+        if op.type == 13:
+          if wait["Protectcancl"] == True:
+            group = cl.getGroup(op.param1)
+            gMembMids = [contact.mid for contact in group.invitee]
+            if op.param2 not in Bots:
+              if op.param2 in Bots:
+                pass
+              else:
+                try:
                   #ki.cancelGroupInvitation(op.param1, gMembMids)
                   #ki.kickoutFromGroup(op.param1,[op.param2])
-                  #cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "แน๊...!!! แอบดึงคนมาอีกแระ......😒😒😒" + "\n\n\n"  + datetime.today().strftime('%H:%M:%S'))
+                  cl.sendText(op.param1,cl.getContact(op.param2).displayName + "\n" + "แน๊...!!! แอบดึงคนมาอีกแระ......😒😒😒" + "\n\n\n"  + datetime.today().strftime('%H:%M:%S'))
                   #ki.kickoutFromGroup(op.param1,[op.param2])
-                #except:
+                except:
                   #ki.cancelGroupInvitation(op.param1, gMembMids)
-                  #ki.sendText(op.param1,ki.getContact(op.param2).displayName + "\n" + "แอบดึงใครมาล่ะท่าน .......🙅🙅🙅" + "\n\n\n"  + datetime.today().strftime('%H:%M:%S'))
+                  ki.sendText(op.param1,ki.getContact(op.param2).displayName + "\n" + "แอบดึงใครมาล่ะท่าน .......🙅🙅🙅" + "\n\n\n"  + datetime.today().strftime('%H:%M:%S'))
                   #ki.kickoutFromGroup(op.param1,[op.param2])
         #------Cancel Invite User Finish------#
             
